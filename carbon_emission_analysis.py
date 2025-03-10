@@ -713,26 +713,26 @@ fig_forecast = go.Figure()
 # Historical Data
 fig_forecast.add_trace(go.Scatter(
     x=years, y=co2_levels,
-    mode="markers", name="🔵 Historical CO₂",
+    mode="markers", name=" Historical CO₂",
     marker=dict(color="blue", size=6)
 ))
 
 fig_forecast.add_trace(go.Scatter(
     x=years, y=temp_changes,
-    mode="markers", name="🔴 Historical Temperature",
+    mode="markers", name=" Historical Temperature",
     marker=dict(color="red", size=6)
 ))
 
 # Future Predictions
 fig_forecast.add_trace(go.Scatter(
     x=future_years, y=predicted_co2,
-    mode="lines", name="🔮 Predicted CO₂",
+    mode="lines", name="Predicted CO₂",
     line=dict(color="blue", dash="dash")
 ))
 
 fig_forecast.add_trace(go.Scatter(
     x=future_years, y=predicted_temp,
-    mode="lines", name="🔮 Predicted Temperature",
+    mode="lines", name=" Predicted Temperature",
     line=dict(color="red", dash="dash")
 ))
 
@@ -753,9 +753,6 @@ future_predictions = pd.DataFrame({
     "Predicted CO₂ (ppm)": predicted_co2,
     "Predicted Temp Change (°C)": predicted_temp
 })
-
-import ace_tools as tools
-tools.display_dataframe_to_user(name="Future CO₂ & Temperature Predictions (ARIMA)", dataframe=future_predictions)
 
 
 
